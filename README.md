@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ProdCollab — Marketing Website
 
-## Getting Started
+Marketing and download site for **ProdCollab**, a desktop collaboration app for
+music producers.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + TypeScript
+- Tailwind CSS v4 (CSS-variable design tokens in `app/globals.css`)
+- `next-themes` for dark/light (dark is the brand default, choice persisted)
+- AOS for scroll reveals (degrades gracefully — content is visible without JS)
+- shadcn-style UI primitives in `components/ui`
+
+## Commands
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # dev server
+npm run build   # production build
+npm start       # serve the production build
+npx eslint .    # lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+app/                route segments + sitemap.ts, robots.ts, opengraph-image.tsx
+components/
+  brand/            logo marks (from the desktop app's vector pack)
+  navigation/       navbar (sticky, mobile menu)
+  footer/
+  marketing/        page sections (hero, features, workflow, CTA, …)
+  product/          app-window chrome + UI mockups (session, version history, conflict)
+  download/         download card
+  ui/               button, container, badge
+lib/
+  site.ts           site config, nav, download metadata (PLACEHOLDERS)
+  content.ts        section copy / data
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Before launch — replace these placeholders
 
-## Learn More
+All in `lib/site.ts`:
 
-To learn more about Next.js, take a look at the following resources:
+- `download.url` — real Windows installer URL (currently `#`)
+- `download.version` — real version string
+- `download.releaseDate` — real release date
+- `siteConfig.url` — production domain (used for canonical URLs, sitemap, OG)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Also confirm the system requirements copy in `app/download/page.tsx` and replace
+the placeholder legal copy in `app/privacy` and `app/terms`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The favicon at `app/favicon.ico` is the Next.js default — swap for a real
+ProdCollab icon.
