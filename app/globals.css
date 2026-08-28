@@ -1,0 +1,269 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  ProdCollab design tokens                                           */
+/*  Dark is the primary brand expression. Light is intentionally       */
+/*  designed, not an inversion.                                        */
+/* ------------------------------------------------------------------ */
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 9%);
+
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 9%);
+
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 9%);
+
+  --primary: hsl(220 64% 52%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  --secondary: hsl(0 0% 96%);
+  --secondary-foreground: hsl(0 0% 12%);
+
+  --muted: hsl(0 0% 96%);
+  --muted-foreground: hsl(0 0% 40%);
+
+  --accent: hsl(220 60% 96%);
+  --accent-foreground: hsl(220 64% 32%);
+
+  --success: hsl(145 42% 38%);
+  --destructive: hsl(0 55% 46%);
+  --warning: hsl(38 62% 46%);
+
+  --border: hsl(0 0% 90%);
+  --input: hsl(0 0% 92%);
+  --ring: hsl(220 64% 52%);
+
+  --surface-1: hsl(0 0% 98%);
+  --surface-2: hsl(0 0% 95%);
+  --grid-line: hsl(0 0% 92%);
+
+  --radius: 0.75rem;
+
+  --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+  --shadow-md: 0 8px 24px -8px hsl(0 0% 0% / 0.12);
+  --shadow-lg: 0 24px 64px -16px hsl(0 0% 0% / 0.18);
+}
+
+.dark {
+  --background: hsl(0 0% 0%);
+  --foreground: hsl(0 0% 92%);
+
+  --card: hsl(0 0% 4%);
+  --card-foreground: hsl(0 0% 92%);
+
+  --popover: hsl(0 0% 5%);
+  --popover-foreground: hsl(0 0% 92%);
+
+  --primary: hsl(220 72% 62%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  --secondary: hsl(0 0% 9%);
+  --secondary-foreground: hsl(0 0% 92%);
+
+  --muted: hsl(0 0% 9%);
+  --muted-foreground: hsl(0 0% 52%);
+
+  --accent: hsl(220 40% 12%);
+  --accent-foreground: hsl(220 72% 78%);
+
+  --success: hsl(145 28% 48%);
+  --destructive: hsl(0 42% 42%);
+  --warning: hsl(38 50% 52%);
+
+  --border: hsl(0 0% 15%);
+  --input: hsl(0 0% 8%);
+  --ring: hsl(220 72% 62%);
+
+  --surface-1: hsl(0 0% 6%);
+  --surface-2: hsl(0 0% 9%);
+  --grid-line: hsl(0 0% 12%);
+
+  --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.4);
+  --shadow-md: 0 12px 32px -8px hsl(0 0% 0% / 0.6);
+  --shadow-lg: 0 32px 80px -16px hsl(0 0% 0% / 0.7);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-destructive: var(--destructive);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-grid-line: var(--grid-line);
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-elev-sm: var(--shadow-sm);
+  --shadow-elev-md: var(--shadow-md);
+  --shadow-elev-lg: var(--shadow-lg);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--primary) 28%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Scroll reveal (AOS)                                                */
+/*  Scoped under .aos-ready — added by the client only after init — so */
+/*  content is fully visible if JS is slow, fails, or is disabled.     */
+/* ------------------------------------------------------------------ */
+
+.aos-ready [data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.aos-ready [data-aos="fade-up"] {
+  transform: translateY(16px);
+}
+.aos-ready [data-aos="fade-left"] {
+  transform: translateX(24px);
+}
+.aos-ready [data-aos="fade-right"] {
+  transform: translateX(-24px);
+}
+
+.aos-ready [data-aos].aos-animate {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Utilities                                                          */
+/* ------------------------------------------------------------------ */
+
+.dotgrid {
+  background-image: radial-gradient(
+    var(--grid-line) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+.linegrid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.mask-fade-b {
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+}
+
+.mask-fade-edges {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes pc-pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary) 45%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 10px color-mix(in srgb, var(--primary) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary) 0%, transparent);
+  }
+}
+
+.pulse-ring {
+  animation: pc-pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pc-marquee-y {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
