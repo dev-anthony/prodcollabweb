@@ -18,11 +18,11 @@ export function Hero() {
         <div className="max-w-xl" data-aos="fade-up">
           <Badge>Collaboration for music production</Badge>
 
-          <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.08] tracking-[-0.03em] sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="mt-6 text-balance text-[2rem] font-semibold leading-[1.1] tracking-[-0.025em] sm:text-[2.75rem] sm:leading-[1.08] lg:text-[3.3rem]">
             Make music together. Keep your workflow.
           </h1>
 
-          <p className="mt-6 text-balance text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-6 max-w-md text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
             ProdCollab keeps a production connected while everyone works from
             their own setup. Share sessions, stems, samples and revisions
             without changing the way you produce.

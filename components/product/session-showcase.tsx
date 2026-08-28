@@ -11,7 +11,7 @@ const activity = [
 
 export function SessionShowcase({ className }: { className?: string }) {
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("relative pt-6 sm:pt-0", className)}>
       <AppWindow
         title="ProdCollab — Midnight Drive"
         toolbar={
@@ -119,18 +119,27 @@ export function SessionShowcase({ className }: { className?: string }) {
         </div>
       </AppWindow>
 
-      {/* floating annotations */}
-      <div className="pointer-events-none absolute -left-3 top-16 hidden lg:block" data-aos="fade-right" data-aos-delay="200">
+      {/* floating annotations (desktop only) */}
+      <div
+        className="pointer-events-none absolute -left-3 top-28 hidden lg:block"
+        data-aos="fade-right"
+        data-aos-delay="200"
+      >
         <Annotation tone="primary">New revision</Annotation>
       </div>
-      <div className="pointer-events-none absolute -right-4 bottom-24 hidden lg:block" data-aos="fade-left" data-aos-delay="300">
+      <div
+        className="pointer-events-none absolute -right-4 bottom-10 hidden lg:block"
+        data-aos="fade-left"
+        data-aos-delay="300"
+      >
         <Annotation tone="warning">Local changes</Annotation>
       </div>
 
+      {/* incoming update — sits above the window like a desktop notification */}
       <div
-        className="absolute -bottom-6 right-4 w-60 rounded-xl border border-border bg-popover p-3 shadow-elev-lg sm:right-8"
-        data-aos="fade-up"
-        data-aos-delay="400"
+        className="absolute -top-1 right-2 z-10 w-[min(15rem,88%)] rounded-xl border border-border bg-popover p-3 shadow-elev-lg sm:right-6 sm:top-2"
+        data-aos="fade-down"
+        data-aos-delay="250"
       >
         <div className="flex items-start gap-2.5">
           <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-primary/15 pulse-ring">

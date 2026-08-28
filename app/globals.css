@@ -138,6 +138,9 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    /* clip (not hidden) so stray decoration never scrolls the page,
+       without breaking position: sticky on the navbar */
+    overflow-x: clip;
   }
 
   ::selection {
@@ -167,6 +170,9 @@
 
 .aos-ready [data-aos="fade-up"] {
   transform: translateY(16px);
+}
+.aos-ready [data-aos="fade-down"] {
+  transform: translateY(-16px);
 }
 .aos-ready [data-aos="fade-left"] {
   transform: translateX(24px);

@@ -31,7 +31,7 @@ export function SectionHeading({
       {eyebrow ? <Badge>{eyebrow}</Badge> : null}
       <Heading
         className={cn(
-          "text-balance text-3xl font-semibold leading-[1.12] tracking-[-0.02em] sm:text-4xl",
+          "text-balance text-[1.6rem] font-semibold leading-[1.15] tracking-[-0.02em] sm:text-4xl sm:leading-[1.12]",
           align === "center" && "max-w-2xl",
         )}
       >
@@ -40,7 +40,7 @@ export function SectionHeading({
       {description ? (
         <p
           className={cn(
-            "text-balance text-base leading-relaxed text-muted-foreground sm:text-lg",
+            "text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg",
             align === "center" ? "max-w-2xl" : "max-w-xl",
           )}
         >

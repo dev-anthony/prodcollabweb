@@ -20,11 +20,11 @@ export function PageHeader({
       <Container className="relative py-20 sm:py-24">
         <div className="max-w-2xl" data-aos="fade-up">
           {eyebrow ? <Badge>{eyebrow}</Badge> : null}
-          <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.1] tracking-[-0.02em] sm:text-5xl">
+          <h1 className="mt-5 text-balance text-[2rem] font-semibold leading-[1.1] tracking-[-0.02em] sm:text-5xl">
             {title}
           </h1>
           {description ? (
-            <p className="mt-5 text-balance text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               {description}
             </p>
           ) : null}
