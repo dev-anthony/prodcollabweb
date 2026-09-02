@@ -68,7 +68,7 @@ export function Logo({
 }) {
   return (
     <span className={cn("inline-flex items-center gap-2", className)}>
-      <LogoMark className="h-6 w-auto text-[color:var(--primary)]" />
+      <LogoMark className="h-6 w-auto text-primary" />
       {showWordmark ? <LogoWordmark className="h-[1.05rem] w-auto" /> : null}
     </span>
   );

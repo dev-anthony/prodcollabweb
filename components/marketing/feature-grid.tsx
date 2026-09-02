@@ -12,7 +12,7 @@ export function FeatureGrid({ items }: { items: Feature[] }) {
             data-aos="fade-up"
             data-aos-delay={(i % 3) * 80}
           >
-            <span className="grid size-9 place-items-center rounded-lg border border-border bg-secondary/50 text-[color:var(--primary)]">
+            <span className="grid size-9 place-items-center rounded-lg border border-border bg-secondary/50 text-primary">
               <Icon className="size-[1.05rem]" />
             </span>
             <h3 className="text-[0.98rem] font-semibold tracking-[-0.01em]">

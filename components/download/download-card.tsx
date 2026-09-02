@@ -10,7 +10,7 @@ export function DownloadCard() {
       data-aos="fade-up"
     >
       <div className="flex items-center gap-3">
-        <span className="grid size-11 place-items-center rounded-xl border border-border bg-secondary/50 text-[color:var(--primary)]">
+        <span className="grid size-11 place-items-center rounded-xl border border-border bg-secondary/50 text-primary">
           <Monitor className="size-5" />
         </span>
         <div>
@@ -20,7 +20,7 @@ export function DownloadCard() {
       </div>
 
       <Button asChild size="lg" className="mt-7 w-full">
-        <a href={download.url} download>
+        <a href={download.url}>
           <Download />
           Download for Windows
         </a>
@@ -31,11 +31,11 @@ export function DownloadCard() {
           <dt className="text-xs uppercase tracking-[0.1em] text-muted-foreground">
             Version
           </dt>
-          <dd className="mt-0.5">{download.version}</dd>
+          <dd className="mt-0.5">{download.versionLabel}</dd>
         </div>
         <div>
           <dt className="text-xs uppercase tracking-[0.1em] text-muted-foreground">
-            Released
+            Release
           </dt>
           <dd className="mt-0.5">{download.releaseDate}</dd>
         </div>
@@ -54,8 +54,8 @@ export function DownloadCard() {
       </dl>
 
       <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
-        Version and release date are placeholders until the public build is
-        published.
+        ProdCollab is in early access. The {download.versionLabel} build is
+        available now — the public launch date is still to come.
       </p>
     </div>
   );

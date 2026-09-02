@@ -25,7 +25,7 @@ export function WorkflowTimeline() {
                 left ? "sm:-right-[7px]" : "sm:-left-[7px]",
               )}
             />
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-[color:var(--primary)]">
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-primary">
               {item.who}
             </p>
             <p className="mt-1 text-sm font-semibold">{item.step}</p>

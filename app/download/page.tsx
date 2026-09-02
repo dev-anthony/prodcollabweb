@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/marketing/page-header";
 import { Section } from "@/components/marketing/section";
 import { DownloadCard } from "@/components/download/download-card";
+import { WaitlistForm } from "@/components/waitlist/waitlist-form";
 import { download } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -38,6 +39,18 @@ export default function DownloadPage() {
 
       <Section>
         <DownloadCard />
+        <div
+          className="mx-auto mt-6 max-w-xl rounded-2xl border border-border bg-surface-1/50 p-6 text-center"
+          data-aos="fade-up"
+        >
+          <p className="text-sm font-medium">Want the launch update?</p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            We&apos;ll email you once ProdCollab opens up more widely.
+          </p>
+          <div className="mt-4 text-left">
+            <WaitlistForm source="download" />
+          </div>
+        </div>
       </Section>
 
       <Section className="border-y border-border bg-surface-1/50 py-16">
@@ -76,8 +89,8 @@ export default function DownloadPage() {
               ))}
             </dl>
             <p className="mt-4 text-xs text-muted-foreground">
-              Exact requirements will be confirmed with the public release. The
-              current version shown ({download.version}) is a placeholder.
+              Current build: {download.versionLabel}. Requirements may be refined
+              as ProdCollab moves out of early access.
             </p>
           </div>
         </div>

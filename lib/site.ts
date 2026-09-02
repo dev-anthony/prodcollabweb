@@ -1,6 +1,5 @@
 /**
- * Central site configuration. Real values (download URL, version, release
- * date) are placeholders — swap them here when the build is published.
+ * Central site configuration.
  */
 
 export const siteConfig = {
@@ -8,18 +7,19 @@ export const siteConfig = {
   tagline: "Make music together. Keep your workflow.",
   description:
     "ProdCollab is a desktop app for music producers who collaborate on real projects. Work on sessions, stems, samples and revisions with collaborators from your own setup.",
-  url: "https://prodcollab.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://prodcollab.app",
   ogImage: "/og.png",
 };
 
 export const download = {
   platform: "Windows",
   os: "Windows 10 / Windows 11",
-  // Placeholders — replace when a real build is published.
   version: "1.0.0",
+  versionLabel: "v1.0.0",
+  // The public launch date isn't set yet — the build is available now for
+  // early-access producers.
   releaseDate: "Coming soon",
   fileType: "Windows installer (.exe)",
-  // Point this at the real installer when it exists.
   url: "https://github.com/dev-anthony/Producer-collaboration-platform/releases/download/v1.0.0/ProdCollabSetup.exe",
 };
 

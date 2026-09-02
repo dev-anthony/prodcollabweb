@@ -14,7 +14,7 @@ export function Hero() {
         aria-hidden
         className="dotgrid pointer-events-none absolute inset-0 opacity-60 mask-fade-b"
       />
-      <Container className="relative grid gap-16 pb-24 pt-16 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-12 lg:pb-28 lg:pt-24">
+      <Container className="relative grid gap-14 pb-24 pt-16 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-10 lg:pb-28 lg:pt-24">
         <div className="max-w-xl" data-aos="fade-up">
           <Badge>Collaboration for music production</Badge>
 
@@ -45,7 +45,11 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="relative" data-aos="fade-up" data-aos-delay="120">
+        <div
+          className="relative xl:-mr-8"
+          data-aos="fade-up"
+          data-aos-delay="120"
+        >
           <SessionShowcase />
         </div>
       </Container>

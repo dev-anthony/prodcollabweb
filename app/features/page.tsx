@@ -4,8 +4,10 @@ import { PageHeader } from "@/components/marketing/page-header";
 import { Section } from "@/components/marketing/section";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { DownloadCta } from "@/components/marketing/download-cta";
-import { VersionHistoryPanel } from "@/components/product/version-history-panel";
+import { VersionHistoryModal } from "@/components/product/version-history-modal";
 import { ConflictPanel } from "@/components/product/conflict-panel";
+import { CollabView } from "@/components/product/collab-view";
+import { CreateProjectModal } from "@/components/product/create-project-modal";
 import { featurePages } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -25,6 +27,12 @@ export default function FeaturesPage() {
       />
 
       <Section>
+        <div
+          className="mx-auto mb-16 max-w-3xl"
+          data-aos="fade-up"
+        >
+          <CollabView />
+        </div>
         <div className="space-y-px overflow-hidden rounded-xl border border-border bg-border">
           {featurePages.map((feature, i) => {
             const Icon = feature.icon;
@@ -34,7 +42,7 @@ export default function FeaturesPage() {
                 className="flex flex-col gap-4 bg-card p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8"
                 data-aos="fade-up"
               >
-                <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-border bg-secondary/50 text-[color:var(--primary)]">
+                <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-border bg-secondary/50 text-primary">
                   <Icon className="size-5" />
                 </span>
                 <div className="sm:flex-1">
@@ -64,12 +72,25 @@ export default function FeaturesPage() {
             description="Restore an earlier state without losing what came after it."
           />
           <div data-aos="fade-up">
-            <VersionHistoryPanel />
+            <VersionHistoryModal />
           </div>
         </div>
       </Section>
 
       <Section>
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <SectionHeading
+            eyebrow="Getting started"
+            title="Set up a production without touching infrastructure"
+            description="Name it, connect your folder, choose who can see it. That's the whole setup."
+          />
+          <div data-aos="fade-up">
+            <CreateProjectModal />
+          </div>
+        </div>
+      </Section>
+
+      <Section className="border-t border-border bg-surface-1/50">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <SectionHeading
             eyebrow="Conflict protection"

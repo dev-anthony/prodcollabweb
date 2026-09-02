@@ -8,9 +8,11 @@ import { OwnSetup } from "@/components/marketing/own-setup";
 import { Compatibility } from "@/components/marketing/compatibility";
 import { AudienceGrid } from "@/components/marketing/audience-grid";
 import { DownloadCta } from "@/components/marketing/download-cta";
-import { VersionHistoryPanel } from "@/components/product/version-history-panel";
+import { WaitlistSection } from "@/components/waitlist/waitlist-section";
+import { VersionHistoryModal } from "@/components/product/version-history-modal";
 import { ConflictPanel } from "@/components/product/conflict-panel";
-import { AppWindow, Annotation } from "@/components/product/app-window";
+import { CreateProjectModal } from "@/components/product/create-project-modal";
+import { JoinProjectModal } from "@/components/product/join-project-modal";
 import { features } from "@/lib/content";
 
 export default function HomePage() {
@@ -30,38 +32,15 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Core experience visual */}
+      {/* Core experience — set up a production */}
       <Section className="border-y border-border bg-surface-1/50">
         <SectionHeading
           eyebrow="Core experience"
-          title="See the whole production at a glance"
-          description="Local changes, incoming revisions and what's ready to share — all in one place, without a single technical term."
+          title="Point ProdCollab at your folder and keep producing"
+          description="Name the production, connect the folder you already work in, and you're collaborating. No infrastructure to set up or understand."
         />
-        <div className="relative mt-14" data-aos="fade-up">
-          <AppWindow title="ProdCollab — Midnight Drive">
-            <div className="grid gap-4 p-5 sm:grid-cols-3">
-              {[
-                { label: "Local changes", value: "2 files", tone: "warning" as const },
-                { label: "New revision", value: "From Maya", tone: "primary" as const },
-                { label: "Version history", value: "18 stages", tone: "default" as const },
-              ].map((card) => (
-                <div
-                  key={card.label}
-                  className="rounded-lg border border-border bg-surface-1/60 p-4"
-                >
-                  <Annotation tone={card.tone}>{card.label}</Annotation>
-                  <p className="mt-3 text-sm font-medium">{card.value}</p>
-                </div>
-              ))}
-            </div>
-            <div className="border-t border-border p-5">
-              <div className="flex flex-wrap items-center gap-2">
-                <Annotation>Pull latest</Annotation>
-                <Annotation>Share latest work</Annotation>
-                <Annotation tone="success">Up to date</Annotation>
-              </div>
-            </div>
-          </AppWindow>
+        <div className="relative mx-auto mt-14 max-w-3xl" data-aos="fade-up">
+          <CreateProjectModal />
         </div>
       </Section>
 
@@ -96,8 +75,13 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Your session stays your session"
             title="Your setup. Your session. One shared production."
-            description="Each collaborator works from their own project folder on their own computer. ProdCollab connects the work without forcing everyone into the same workspace."
+            description="Each collaborator opens the production into their own local folder. Paste a share link, pick where it lives, and keep working from there."
           />
+          <div data-aos="fade-up">
+            <JoinProjectModal />
+          </div>
+        </div>
+        <div className="mt-14">
           <OwnSetup />
         </div>
       </Section>
@@ -111,7 +95,7 @@ export default function HomePage() {
             description="Each entry keeps the contributor, the date, a production note and the files that changed — so going back is a decision, not a scramble."
           />
           <div data-aos="fade-up">
-            <VersionHistoryPanel />
+            <VersionHistoryModal />
           </div>
         </div>
       </Section>
@@ -151,6 +135,8 @@ export default function HomePage() {
           <AudienceGrid />
         </div>
       </Section>
+
+      <WaitlistSection />
 
       <DownloadCta />
     </>
