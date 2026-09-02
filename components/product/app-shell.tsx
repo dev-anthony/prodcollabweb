@@ -69,9 +69,9 @@ export function AppShell({
         </span>
       </div>
 
-      <div className="grid grid-cols-1 @md:grid-cols-[152px_1fr]">
+      <div className="grid grid-cols-1 @lg:grid-cols-[152px_1fr]">
         {/* sidebar */}
-        <aside className="hidden flex-col border-r border-border bg-surface-1/40 p-2.5 @md:flex">
+        <aside className="hidden flex-col border-r border-border bg-surface-1/40 p-2.5 @lg:flex">
           <div className="flex items-center gap-1.5 px-1.5 py-1">
             <LogoMark className="h-4 w-auto text-primary" />
             <LogoWordmark className="h-[0.7rem] w-auto" />

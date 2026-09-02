@@ -141,7 +141,7 @@ export function CollabView({ className }: { className?: string }) {
         <p className="text-sm font-semibold">Collaborated projects</p>
       </div>
 
-      <div className="mt-3 grid gap-3 @xl:grid-cols-2">
+      <div className="mt-3 grid gap-3 @md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.name} project={project} />
         ))}
