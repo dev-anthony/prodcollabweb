@@ -20,7 +20,7 @@ export const download = {
   releaseDate: "Coming soon",
   fileType: "Windows installer (.exe)",
   // Point this at the real installer when it exists.
-  url: "#download-installer",
+  url: "https://github.com/dev-anthony/Producer-collaboration-platform/releases/download/v1.0.0/ProdCollabSetup.exe",
 };
 
 export const mainNav: { title: string; href: string }[] = [
