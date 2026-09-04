@@ -16,10 +16,9 @@ export function Hero() {
       />
       <Container className="relative grid gap-14 pb-24 pt-16 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-10 lg:pb-28 lg:pt-24">
         <div className="max-w-xl" data-aos="fade-up">
-          <Badge>Collaboration for music production</Badge>
-
-          <h1 className="mt-6 text-balance text-[2rem] font-semibold leading-[1.1] tracking-[-0.025em] sm:text-[2.75rem] sm:leading-[1.08] lg:text-[3.3rem]">
-            Make music together. Keep your workflow.
+        
+          <h1 className="text-balance text-[2rem] font-semibold leading-[1.1] tracking-[-0.025em] sm:text-[2.75rem] sm:leading-[1.08] lg:text-[3.3rem]">
+            Different Studio/DAW. Same Session.
           </h1>
 
           <p className="mt-6 max-w-md text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
