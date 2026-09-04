@@ -14,8 +14,9 @@ export function Hero() {
         aria-hidden
         className="dotgrid pointer-events-none absolute inset-0 opacity-60 mask-fade-b"
       />
-      <Container className="relative grid gap-14 pb-24 pt-16 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-10 lg:pb-28 lg:pt-24">
+      <Container className="relative grid gap-14 pb-24 pt-16 lg:grid-cols-[0.82fr_1.18fr]  lg:gap-10 lg:pb-28 lg:pt-24">
         <div className="max-w-xl" data-aos="fade-up">
+          
         
           <h1 className="text-balance text-[2rem] font-semibold leading-[1.1] tracking-[-0.025em] sm:text-[2.75rem] sm:leading-[1.08] lg:text-[3.3rem]">
             Different Studio/DAW. Same Session.
