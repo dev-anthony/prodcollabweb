@@ -18,7 +18,7 @@ export function Hero() {
         <div className="max-w-xl" data-aos="fade-up">
           
         
-          <h1 className="text-balance text-[2rem] font-semibold leading-[1.1] tracking-[-0.025em] sm:text-[2.75rem] sm:leading-[1.08] lg:text-[3.3rem]">
+          <h1 className="mt-6 text-balance text-[2rem] font-semibold leading-[1.1] tracking-[-0.025em] sm:text-[2.75rem] sm:leading-[1.08] lg:text-[3.3rem]">
             Different Studio/DAW. Same Session.
           </h1>
 
