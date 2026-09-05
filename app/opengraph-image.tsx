@@ -42,7 +42,7 @@ export default function OgImage() {
               maxWidth: 900,
             }}
           >
-            Make music together. Keep your workflow.
+            Different studio/DAW. Same session.
           </div>
           <div style={{ fontSize: 30, color: "#8a8a8a", maxWidth: 820 }}>
             Collaborate on sessions, stems, samples and revisions from your own
