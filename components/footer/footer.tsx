@@ -40,7 +40,7 @@ export function Footer() {
       <div className="border-t border-border">
         <Container className="flex flex-col items-center justify-between gap-3 py-6 text-xs text-muted-foreground sm:flex-row">
           <p>© 2026 ProdCollab. All rights reserved.</p>
-          <p>Make music together. Keep your workflow.</p>
+          <p>Different studio/DAW. Same session.</p>
         </Container>
       </div>
     </footer>
