@@ -4,7 +4,7 @@
 
 export const siteConfig = {
   name: "ProdCollab",
-  tagline: "Make music together. Keep your workflow.",
+  tagline: "Different DAW. Same session.",
   description:
     "ProdCollab is a desktop app for music producers who collaborate on real projects. Work on sessions, stems, samples and revisions with collaborators from your own setup.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://prodcollab.vercel.app",
