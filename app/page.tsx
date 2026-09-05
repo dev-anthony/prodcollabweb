@@ -129,7 +129,7 @@ export default function HomePage() {
       <Section>
         <SectionHeading
           eyebrow="Who it's for"
-          title="Different setups. Same production."
+          title="Different DAW. Same session."
         />
         <div className="mt-14">
           <AudienceGrid />
